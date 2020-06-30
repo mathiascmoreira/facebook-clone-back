@@ -17,6 +17,11 @@ module.exports = {
                 type: Sequelize.STRING,
                 allowNull: false,
             },
+            user_name: {
+                type: Sequelize.STRING,
+                unique: true,
+                allowNull: false,
+            },
             email: {
                 type: Sequelize.STRING,
                 allowNull: false,
@@ -29,6 +34,10 @@ module.exports = {
             birthday: {
                 type: Sequelize.DATE,
                 allowNull: false
+            },
+            joined_at: {
+                type: Sequelize.DATE,
+                allowNull: true,
             },
             created_at: {
                 type: Sequelize.DATE,

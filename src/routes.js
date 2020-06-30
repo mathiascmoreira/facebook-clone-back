@@ -16,7 +16,7 @@ routes.use(authMiddleware);
 routes.put('/users', UserController.update);
 
 routes.post('/posts', PostController.store);
-routes.get('/posts', PostController.index);
+routes.get('/posts/:userId', PostController.index);
 
 routes.get('/newsfeed', NewsFeedController.index);
 

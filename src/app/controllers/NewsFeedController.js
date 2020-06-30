@@ -74,16 +74,6 @@ class NewsFeedController {
                         as: 'user',
                         attributes: ['name']
                     }]
-                   
-
-
-                    // "id": 2,
-                    // "postId": 3,
-                    // "userId": 7,
-                    // "createdAt": "2020-06-12T02:06:37.116Z",
-                    // "updatedAt": "2020-06-12T02:06:37.116Z",
-                    // "UserId": 7,
-                    // "PostId": 3
                 }
             ],
             order: [['createdAt', 'DESC']],

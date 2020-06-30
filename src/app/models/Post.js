@@ -4,6 +4,7 @@ class Post extends Model {
     static init(sequelize) {
         super.init({
             userId: Sequelize.INTEGER,
+            targetUserId: Sequelize.INTEGER,
             content: Sequelize.STRING,
             isPublic: Sequelize.BOOLEAN,
             hasLikeReaction: Sequelize.VIRTUAL,
