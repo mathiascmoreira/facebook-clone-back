@@ -25,7 +25,7 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
-      type: {
+      type: { //1 - Single, 2 - In a relationship, 3 - Engaged, 4 - Maried
         type: Sequelize.INTEGER,
         allowNull: false,
       },

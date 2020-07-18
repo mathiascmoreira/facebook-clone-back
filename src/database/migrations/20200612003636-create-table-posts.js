@@ -23,6 +23,10 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
+      image_id: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+      },
       content: {
         type: Sequelize.TEXT,
         allowNull: false,

@@ -6,7 +6,7 @@ class Post extends Model {
             userId: Sequelize.INTEGER,
             targetUserId: Sequelize.INTEGER,
             content: Sequelize.STRING,
-            isPublic: Sequelize.BOOLEAN,
+            visibility: Sequelize.BOOLEAN,
             hasLikeReaction: Sequelize.VIRTUAL,
             hasLoveReaction: Sequelize.VIRTUAL,
             hasCareReaction: Sequelize.VIRTUAL,

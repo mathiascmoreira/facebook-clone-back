@@ -5,9 +5,12 @@ class User extends Model {
     static init(sequelize) {
         super.init({
             name: Sequelize.STRING,
-            last_name: Sequelize.STRING,
+            lastName: Sequelize.STRING,
             email: Sequelize.STRING,
+            userName: Sequelize.STRING,
             birthday: Sequelize.DATE,
+            bio: Sequelize.STRING,
+            joinedAt: Sequelize.DATE,
             password: Sequelize.VIRTUAL,
             password_hash: Sequelize.STRING,
         },
@@ -25,8 +28,15 @@ class User extends Model {
     }
 
     static associate(models) {
-        this.hasMany(models.PostLike, { as: 'likes' });
-        this.hasMany(models.PostComment, { as: 'comments'});
+        this.hasMany(models.PostLike, { as: 'likes', foreignKey: 'userId'});
+        this.hasMany(models.PostComment, { as: 'comments', foreignKey: 'userId'});
+        this.hasMany(models.UserEducation, { as: 'educations', foreignKey: 'userId'});
+        this.hasOne(models.UserRelationship, { as: 'relationship', foreignKey: 'userId'});
+        this.hasMany(models.UserWork, { as: 'works', foreignKey: 'userId'});
+        this.hasOne(models.UserLocation, { as: 'location', foreignKey: 'userId'});
+        this.belongsTo(models.File, { foreignKey: 'coverPhotoId', as: 'coverPhoto' });
+        this.belongsTo(models.File, { foreignKey: 'pictureId', as: 'picture' });
+
     }
 
     checkPassword(password) {

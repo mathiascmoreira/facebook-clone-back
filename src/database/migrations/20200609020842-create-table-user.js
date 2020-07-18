@@ -35,10 +35,28 @@ module.exports = {
                 type: Sequelize.DATE,
                 allowNull: false
             },
+            cover_photo_id: {
+                type: Sequelize.INTEGER,
+                allowNull: true,
+                references: { model: 'files', key: 'id' },
+                onUpdate: 'CASCADE',
+                onDelete: 'SET NULL',
+            },
+            picture_id: {
+                type: Sequelize.INTEGER,
+                allowNull: true,
+                references: { model: 'files', key: 'id' },
+                onUpdate: 'CASCADE',
+                onDelete: 'SET NULL',
+            },
+            bio: {
+                type: Sequelize.STRING,
+                allowNull: true,
+            },
             joined_at: {
                 type: Sequelize.DATE,
                 allowNull: true,
-            },
+            },           
             created_at: {
                 type: Sequelize.DATE,
                 allowNull: false,

@@ -16,7 +16,7 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
-      type: {
+      type: { //1 - High School   2 - College
         type: Sequelize.INTEGER,
         allowNull: false,
       },
@@ -32,25 +32,13 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: true
       },
-      concentration1: {
-        type: Sequelize.STRING,
-        allowNull: true
-      },
-      concentration2: {
-        type: Sequelize.STRING,
-        allowNull: true
-      },
-      concentration3: {
-        type: Sequelize.STRING,
-        allowNull: true
+      currentlyStudying: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
       },
       graduated: {
         type: Sequelize.BOOLEAN,
         allowNull: false,
-      },
-      attendedFor: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
       },
       date_start: {
         type: Sequelize.DATE,
@@ -60,7 +48,7 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: true,
       },
-      visibility: {
+      visibility: { //1 - Public, 2 - Only Friends, 3 - Only Me
         type: Sequelize.INTEGER,
         allowNull: false
       },
