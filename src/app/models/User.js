@@ -12,7 +12,7 @@ class User extends Model {
             bio: Sequelize.STRING,
             joinedAt: Sequelize.DATE,
             password: Sequelize.VIRTUAL,
-            password_hash: Sequelize.STRING,
+            passwordHash: Sequelize.STRING,
         },
         {
             sequelize,
@@ -40,7 +40,7 @@ class User extends Model {
     }
 
     checkPassword(password) {
-        return bcrypt.compare(password, this.password_hash);
+        return bcrypt.compare(password, this.passwordHash);
     }
 }
 

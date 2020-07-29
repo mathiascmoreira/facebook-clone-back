@@ -3,7 +3,13 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('friendships', {
-      user1_id: {
+      id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+      },
+      user_id: {
         type: Sequelize.INTEGER,
         primaryKey:true,
         allowNull: false,
@@ -11,7 +17,7 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
-      user2_id: {
+      friend_id: {
         type: Sequelize.INTEGER,
         primaryKey:true,
         allowNull: false,

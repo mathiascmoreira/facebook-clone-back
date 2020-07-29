@@ -3,8 +3,8 @@ import Sequelize, { Model } from 'sequelize';
 class Friendship extends Model {
     static init(sequelize) {
         super.init({
-            user1Id: Sequelize.INTEGER,
-            user2Id: Sequelize.INTEGER,
+            userId: Sequelize.INTEGER,
+            friendId: Sequelize.INTEGER,
         },
             {
                 sequelize,
@@ -14,8 +14,8 @@ class Friendship extends Model {
     }
 
     static associate(models) {
-        this.belongsTo(models.User, { foreignKey: 'user1Id', as: 'user1' });
-        this.belongsTo(models.User, { foreignKey: 'user2Id', as: 'user2' });
+        this.belongsTo(models.User, { foreignKey: 'userId', as: 'user' });
+        this.belongsTo(models.User, { foreignKey: 'friendId', as: 'friend' });
     }
 }
 
