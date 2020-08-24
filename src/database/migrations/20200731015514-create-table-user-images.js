@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('posts', {
+    return queryInterface.createTable('user_images', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -16,25 +16,10 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
-      target_user_id: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-        references: { model: 'users', key: 'id' },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE',
-      },
       image_id: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: true,
-      },
-      content: {
-        type: Sequelize.TEXT,
-        allowNull: true,
-      },
-      visibility: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-      },
+      },      
       created_at: {
         type: Sequelize.DATE,
         allowNull: false,
@@ -47,6 +32,6 @@ module.exports = {
   },
 
   down: (queryInterface) => {
-    return queryInterface.dropTable('posts');
+    return queryInterface.dropTable('user_images');
   },
 };

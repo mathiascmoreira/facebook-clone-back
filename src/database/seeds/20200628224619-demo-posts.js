@@ -291,7 +291,327 @@ module.exports = {
         visibility: 2,
         created_at: '2020-02-25 06:50:13.735+00',
         updated_at: '2020-02-25 06:50:13.735+00'
-      }
+      },
+      {
+        id: 33,
+        user_id: 1,
+        image_id: 9,
+        visibility: 1,
+        created_at: '2020-02-25 06:50:13.735+00',
+        updated_at: '2020-02-25 06:50:13.735+00'
+      },
+      {
+        id: 34,
+        user_id: 1,
+        image_id: 10,
+        visibility: 1,
+        created_at: '2020-02-26 06:50:13.735+00',
+        updated_at: '2020-02-26 06:50:13.735+00'
+      },
+      {
+        id: 35,
+        user_id: 1,
+        image_id: 11,
+        visibility: 1,
+        created_at: '2020-02-27 06:50:13.735+00',
+        updated_at: '2020-02-27 06:50:13.735+00'
+      },
+      {
+        id: 36,
+        user_id: 1,
+        image_id: 12,
+        visibility: 1,
+        created_at: '2020-02-28 06:50:13.735+00',
+        updated_at: '2020-02-28 06:50:13.735+00'
+      },
+      {
+        id: 37,
+        user_id: 1,
+        image_id: 13,
+        visibility: 1,
+        created_at: '2020-03-25 06:50:13.735+00',
+        updated_at: '2020-03-25 06:50:13.735+00'
+      },
+      {
+        id: 38,
+        user_id: 1,
+        image_id: 14,
+        visibility: 2,
+        created_at: '2020-03-26 06:50:13.735+00',
+        updated_at: '2020-03-26 06:50:13.735+00'
+      },
+      {
+        id: 39,
+        user_id: 1,
+        image_id: 15,
+        visibility: 2,
+        created_at: '2020-03-27 06:50:13.735+00',
+        updated_at: '2020-03-27 06:50:13.735+00'
+      },
+      {
+        id: 40,
+        user_id: 1,
+        image_id: 16,
+        visibility: 2,
+        created_at: '2020-03-28 06:50:13.735+00',
+        updated_at: '2020-03-28 06:50:13.735+00'
+      },
+      {
+        id: 41,
+        user_id: 1,
+        image_id: 17,
+        visibility: 2,
+        created_at: '2020-03-29 06:50:13.735+00',
+        updated_at: '2020-03-29 06:50:13.735+00'
+      },
+      {
+        id: 42,
+        user_id: 1,
+        image_id: 18,
+        visibility: 2,
+        created_at: '2020-03-30 06:50:13.735+00',
+        updated_at: '2020-03-30 06:50:13.735+00'
+      },
+      {
+        id: 43,
+        user_id: 2,
+        image_id: 19,
+        visibility: 1,
+        created_at: '2020-03-31 06:50:13.735+00',
+        updated_at: '2020-03-31 06:50:13.735+00'
+      },
+      {
+        id: 44,
+        user_id: 2,
+        image_id: 20,
+        visibility: 1,
+        created_at: '2020-03-01 06:50:13.735+00',
+        updated_at: '2020-03-01 06:50:13.735+00'
+      },
+      {
+        id: 45,
+        user_id: 2,
+        image_id: 21,
+        visibility: 1,
+        created_at: '2020-03-02 06:50:13.735+00',
+        updated_at: '2020-03-02 06:50:13.735+00'
+      },
+      {
+        id: 46,
+        user_id: 2,
+        image_id: 22,
+        visibility: 1,
+        created_at: '2020-03-03 06:50:13.735+00',
+        updated_at: '2020-03-03 06:50:13.735+00'
+      },
+      {
+        id: 47,
+        user_id: 2,
+        image_id: 23,
+        visibility: 1,
+        created_at: '2020-03-04 06:50:13.735+00',
+        updated_at: '2020-03-04 06:50:13.735+00'
+      },
+      {
+        id: 48,
+        user_id: 2,
+        image_id: 24,
+        visibility: 2,
+        created_at: '2020-03-05 06:50:13.735+00',
+        updated_at: '2020-03-05 06:50:13.735+00'
+      },
+      {
+        id: 49,
+        user_id: 2,
+        image_id: 25,
+        visibility: 2,
+        created_at: '2020-03-06 06:50:13.735+00',
+        updated_at: '2020-03-06 06:50:13.735+00'
+      },
+      {
+        id: 50,
+        user_id: 2,
+        image_id: 26,
+        visibility: 2,
+        created_at: '2020-03-07 06:50:13.735+00',
+        updated_at: '2020-03-07 06:50:13.735+00'
+      },
+      {
+        id: 51,
+        user_id: 2,
+        image_id: 27,
+        visibility: 2,
+        created_at: '2020-03-08 06:50:13.735+00',
+        updated_at: '2020-03-08 06:50:13.735+00'
+      },
+      {
+        id: 52,
+        user_id: 2,
+        image_id: 28,
+        visibility: 2,
+        created_at: '2020-03-09 06:50:13.735+00',
+        updated_at: '2020-03-09 06:50:13.735+00'
+      },
+      {
+        id: 53,
+        user_id: 3,
+        image_id: 29,
+        visibility: 1,
+        created_at: '2020-03-10 06:50:13.735+00',
+        updated_at: '2020-03-10 06:50:13.735+00'
+      },
+      {
+        id: 54,
+        user_id: 3,
+        image_id: 30,
+        visibility: 1,
+        created_at: '2020-03-11 06:50:13.735+00',
+        updated_at: '2020-03-11 06:50:13.735+00'
+      },
+      {
+        id: 55,
+        user_id: 3,
+        image_id: 31,
+        visibility: 1,
+        created_at: '2020-03-12 06:50:13.735+00',
+        updated_at: '2020-03-12 06:50:13.735+00'
+      },
+      {
+        id: 56,
+        user_id: 3,
+        image_id: 32,
+        visibility: 1,
+        created_at: '2020-03-13 06:50:13.735+00',
+        updated_at: '2020-03-13 06:50:13.735+00'
+      },
+      {
+        id: 57,
+        user_id: 3,
+        image_id: 33,
+        visibility: 1,
+        created_at: '2020-03-14 06:50:13.735+00',
+        updated_at: '2020-03-14 06:50:13.735+00'
+      },
+      {
+        id: 58,
+        user_id: 3,
+        image_id: 34,
+        visibility: 2,
+        created_at: '2020-03-15 06:50:13.735+00',
+        updated_at: '2020-03-15 06:50:13.735+00'
+      },
+      {
+        id: 59,
+        user_id: 3,
+        image_id: 35,
+        visibility: 2,
+        created_at: '2020-03-16 06:50:13.735+00',
+        updated_at: '2020-03-16 06:50:13.735+00'
+      },
+      {
+        id: 60,
+        user_id: 3,
+        image_id: 36,
+        visibility: 2,
+        created_at: '2020-03-17 06:50:13.735+00',
+        updated_at: '2020-03-17 06:50:13.735+00'
+      },
+      {
+        id: 61,
+        user_id: 3,
+        image_id: 37,
+        visibility: 2,
+        created_at: '2020-03-18 06:50:13.735+00',
+        updated_at: '2020-03-18 06:50:13.735+00'
+      },
+      {
+        id: 62,
+        user_id: 3,
+        image_id: 38,
+        visibility: 2,
+        created_at: '2020-03-19 06:50:13.735+00',
+        updated_at: '2020-03-19 06:50:13.735+00'
+      },
+      {
+        id: 63,
+        user_id: 4,
+        image_id: 39,
+        visibility: 1,
+        created_at: '2020-03-20 06:50:13.735+00',
+        updated_at: '2020-03-20 06:50:13.735+00'
+      },
+      {
+        id: 64,
+        user_id: 4,
+        image_id: 40,
+        visibility: 1,
+        created_at: '2020-03-21 06:50:13.735+00',
+        updated_at: '2020-03-21 06:50:13.735+00'
+      },
+      {
+        id: 65,
+        user_id: 4,
+        image_id: 41,
+        visibility: 1,
+        created_at: '2020-03-22 06:50:13.735+00',
+        updated_at: '2020-03-22 06:50:13.735+00'
+      },
+      {
+        id: 66,
+        user_id: 4,
+        image_id: 42,
+        visibility: 1,
+        created_at: '2020-03-23 06:50:13.735+00',
+        updated_at: '2020-03-23 06:50:13.735+00'
+      },
+      {
+        id: 67,
+        user_id: 4,
+        image_id: 43,
+        visibility: 1,
+        created_at: '2020-04-24 06:50:13.735+00',
+        updated_at: '2020-04-24 06:50:13.735+00'
+      },
+      {
+        id: 68,
+        user_id: 4,
+        image_id: 44,
+        visibility: 2,
+        created_at: '2020-04-25 06:50:13.735+00',
+        updated_at: '2020-04-25 06:50:13.735+00'
+      },
+      {
+        id: 69,
+        user_id: 4,
+        image_id: 45,
+        visibility: 2,
+        created_at: '2020-04-26 06:50:13.735+00',
+        updated_at: '2020-04-26 06:50:13.735+00'
+      },
+      {
+        id: 70,
+        user_id: 4,
+        image_id: 46,
+        visibility: 2,
+        created_at: '2020-04-27 06:50:13.735+00',
+        updated_at: '2020-04-27 06:50:13.735+00'
+      },
+      {
+        id: 71,
+        user_id: 4,
+        image_id: 47,
+        visibility: 2,
+        created_at: '2020-04-28 06:50:13.735+00',
+        updated_at: '2020-04-28 06:50:13.735+00'
+      },
+      {
+        id: 72,
+        user_id: 4,
+        image_id: 48,
+        visibility: 2,
+        created_at: '2020-04-29 06:50:13.735+00',
+        updated_at: '2020-04-29 06:50:13.735+00'
+      },
     ]);
   },
 
