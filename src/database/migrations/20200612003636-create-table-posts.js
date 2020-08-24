@@ -26,6 +26,9 @@ module.exports = {
       image_id: {
         type: Sequelize.INTEGER,
         allowNull: true,
+        references: { model: 'files', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
       },
       content: {
         type: Sequelize.TEXT,
