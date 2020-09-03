@@ -6,6 +6,7 @@ import SessionController from './app/controllers/SessionController';
 import ProfileController from './app/controllers/ProfileController';
 import FileController from './app/controllers/FileController';
 import FriendshipController from './app/controllers/FriendshipController';
+import PhotosController from './app/controllers/PhotosController';
 
 import multer from 'multer';
 import multerConfig from './config/multer';
@@ -30,6 +31,7 @@ routes.get('/newsfeed', NewsFeedController.index);
 routes.get('/profiles/:username', ProfileController.index);
 
 routes.get('/friendships', FriendshipController.index)
+routes.get('/photos', PhotosController.index)
 
 //rota para o recebimento dos arquivos. O metodo single, significa que a rota receberá apenas um arquivo por vez
 routes.post('/files', upload.single('file'), FileController.store);
