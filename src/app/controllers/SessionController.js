@@ -1,4 +1,5 @@
 import jwt from 'jsonwebtoken';
+import File from '../models/File';
 import User from '../models/User';
 
 import authConfig from '../../config/auth';
@@ -8,6 +9,13 @@ class SessionController {
         const { email, password } = req.body;
 
         const user = await User.findOne({
+            include: [
+                {
+                    model: File,
+                    as: 'picture',
+                    attributes: ['url', 'path'],
+                }
+            ],
             where: {
                 email
             }
@@ -21,10 +29,10 @@ class SessionController {
             return res.status(401).json({ error: 'your email or password are incorrect' })
         }
 
-        const {id, name} = user;
+        const { id, name, picture: { url: profilePhotoUrl } } = user;
 
         return res.json({
-            user: { id, name, email },
+            user: { id, name, profilePhotoUrl },
             token: jwt.sign({ id }, authConfig.secret, {
                 expiresIn: authConfig.expiresIn,
             }),

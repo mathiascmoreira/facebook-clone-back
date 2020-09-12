@@ -9,6 +9,9 @@ class FriendshipController {
 
         const friendships = await Friendship.findAll(
             {
+                where: {
+                    userId: req.params.userId
+                },
                 attributes: [],
                 include: [
                     {
@@ -21,13 +24,14 @@ class FriendshipController {
                                 attributes: ['url', 'path'],
                             }
                         ],
-                        attributes: ['userName', 'name', 'lastName']
-                    }
-                ],
-                where: {
-                    userId: req.userId
-                },
-
+                        attributes: ['userName', 'name', 'lastName'],
+                    },
+                    {
+                        model: User,
+                        as: 'user',
+                        attributes: ['name'],
+                    },
+                ]
             });
 
 

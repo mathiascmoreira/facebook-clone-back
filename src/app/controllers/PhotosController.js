@@ -1,4 +1,5 @@
 import Post from '../models/Post';
+import User from '../models/User';
 import File from '../models/File';
 import { Op } from 'sequelize';
 
@@ -7,17 +8,22 @@ class PhotosController {
         const photos = await Post.findAll(
             {
                 where: {
-                    userId: req.userId,
+                    userId: req.params.userId,
                     [Op.not]: [
                         { imageId: null }
-                    ]
+                    ],
                 },
                 include: [
                     {
                         model: File,
                         as: 'image',
                         attributes: ['url', 'path'],
-                    }
+                    },
+                    {
+                        model: User,
+                        as: 'user',
+                        attributes: ['name']                        
+                    },
                 ],
             });
 

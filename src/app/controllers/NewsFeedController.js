@@ -1,25 +1,19 @@
 import Post from '../models/Post';
 import User from '../models/User';
 import PostComment from '../models/PostComment';
+import File from '../models/File';
 import Friendship from '../models/Friendship';
-import { Op, literal } from 'sequelize';
+import { literal } from 'sequelize';
 
 class NewsFeedController {
 
     async index(req, res) {
 
-        const friendships = await Friendship.findAll(
+        const friendsIds = (await Friendship.findAll(
             {
-                where: {
-                    [Op.or]: [
-                        { user1_id: req.userId },
-                        { user2_id: req.userId }
-                    ]
-                },
-                attributes: ['user1_id', 'user2_id']
-            });
-
-        const friendsIds = friendships.map(friendship => friendship.user1_id == req.userId ? friendship.user2_id : friendship.user1_id);
+                where: { userId: req.userId },
+                attributes: ['friendId']
+            })).map(friendship => friendship.dataValues.friendId);
 
         var posts = await Post.findAll({
             attributes: {
@@ -27,59 +21,70 @@ class NewsFeedController {
                 include: [
                     [
                         literal(`(
-                                SELECT COUNT(*)
-                                FROM post_likes AS likes
-                                WHERE
-                                likes.post_id = "Post".id
-                            )`),
-                        'likesCount'
+                            SELECT COUNT(*) 
+                            FROM post_likes AS likes 
+                            WHERE likes.post_id = "Post".id 
+                        )`), 'likesCount'
                     ],
                     [
                         literal(`(
                                 SELECT COUNT(*)
                                 FROM post_comments AS comments
-                                WHERE
-                                comments.post_id = "Post".id
-                            )`),
-                        'commentsCount'
+                                WHERE comments.post_id = "Post".id
+                        )`), 'commentsCount'
                     ],
                     [
                         literal(`(
                             SELECT COUNT(*)
                             FROM post_likes AS likes
-                            WHERE
-                            likes.post_id = "Post".id and likes.user_id = ${req.userId}
-                        ) > 0`),
-                    'hasOwnLike'
-                    ]
+                            WHERE likes.post_id = "Post".id and likes.user_id = ${req.userId}) > 0
+                        `), 'hasOwnLike'
+                    ],
                 ]
             },
-            where: {
-                user_id: friendsIds
-            },
-
             include: [
-                {
-                    model: User,
-                    as: 'user',
-                    attributes: ['name']
-                },
                 {
                     model: PostComment,
                     as: 'comments',
                     limit: 3,
-                    attributes: ['userId', 'comment'],
-                    include: [ {
+                    attributes: ['userId', 'comment', 'createdAt'],
+                    include: [{
                         model: User,
                         as: 'user',
-                        attributes: ['name']
+                        attributes: ['name'],
+                        include: [
+                            {
+                                model: File,
+                                as: 'picture',
+                                attributes: ['url', 'path'],
+                            },
+                        ]
                     }]
-                }
+                },
+                {
+                    model: File,
+                    as: 'image',
+                    attributes: ['url', 'path'],
+                },
+                {
+                    model: User,
+                    as: 'user',
+                    attributes: ['name'],
+                    include: [
+                        {
+                            model: File,
+                            as: 'picture',
+                            attributes: ['url', 'path'],
+                        },
+                    ]
+                },
             ],
+            where: {
+                userId: friendsIds
+            },
+
             order: [['createdAt', 'DESC']],
         });
-
-
 
         return res.json(posts);
     }

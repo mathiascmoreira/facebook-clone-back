@@ -30,8 +30,8 @@ routes.get('/newsfeed', NewsFeedController.index);
 
 routes.get('/profiles/:username', ProfileController.index);
 
-routes.get('/friendships', FriendshipController.index)
-routes.get('/photos', PhotosController.index)
+routes.get('/friendships/:userId', FriendshipController.index)
+routes.get('/photos/:userId', PhotosController.index)
 
 //rota para o recebimento dos arquivos. O metodo single, significa que a rota receberá apenas um arquivo por vez
 routes.post('/files', upload.single('file'), FileController.store);
